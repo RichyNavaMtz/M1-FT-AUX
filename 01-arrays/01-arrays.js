@@ -40,6 +40,20 @@ function elementoMenorYMayor(array) {
     // Tenes que retornar un array
     // Solamente con el elemento menor y mayor del array recibido
     
+    //pseudo codigo
+    //ordenar el arreglo
+    //pushear el primero y el ultimo
+    
+    // let arr=[]
+    // let mayor[0]
+    // let menor = array[0]
+    // for(let i=0;i<array.length;i++){
+    //     if(array[i]<menor){menor = array[i]}
+    //     if(array[i]>mayor){mayor=array[i]}
+    // }
+    // arr.push(menor)
+    // arr.push(mayor)
+    // return arr
 };
 
 
