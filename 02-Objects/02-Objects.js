@@ -40,7 +40,7 @@ function crearClaseLibro() {
       // Tu código aca:
       let arr=[]
       this.traducciones.forEach(element => {
-        arr.push(element[idioma]) //o elemento.idioma
+        arr.push(element.idioma) //o elemento.idioma
       });
       return arr
     }
@@ -76,12 +76,20 @@ function crearClaseLibro() {
 //   },
 // };
 
+//["The headmaster is Albus Percival Wulfric Brian Dumbledore", 
+//"The keeperOfKeys is Rubeus Hagrid",
+// "The potionsMaster is Severus Snape",
+//"The headOfGryffindor is Minerva McGonagall"]
 //BUCLE FOR IN
 const printStaff = function (objeto) {
   // Retornar un arreglo que contenga los strings indicando el titulo y nombre de cada miembro del staff
   // de esta forma "The headmaster is Albus Percival Wulfric Brian Dumbledore" 
   // el arreglo debe mantener el orden que posee el staff del objeto.
-  
+  let staff=[]
+  for(const property in objeto.staff){
+    staff.push(`The ${property} is ${property.name}`)
+  }
+  return staff
 };
 
 module.exports = { crearClaseLibro, printStaff };
