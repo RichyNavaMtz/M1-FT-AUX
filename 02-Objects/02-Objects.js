@@ -87,7 +87,7 @@ const printStaff = function (objeto) {
   // el arreglo debe mantener el orden que posee el staff del objeto.
   let staff=[]
   for(const property in objeto.staff){
-    staff.push(`The ${property} is ${property.name}`)
+    staff.push(`The ${property} is ${objeto.staff[property].name}`)
   }
   return staff
 };
