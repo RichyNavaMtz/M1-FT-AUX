@@ -5,8 +5,15 @@ function invertirOrden(array) {
     //
     // DETALLE: En caso de que el elemento contenga mas de 1 digito, el mismo NO debera ser devuelto
     // No vale usar el metodo "reverse"
-    
- 
+    let lista =[];
+    let i =array.length
+    while(i>=0){
+        if(array[i]<10){
+            lista.push(array[i]);
+        }
+        i--
+    };
+    return lista
 };
 
 
