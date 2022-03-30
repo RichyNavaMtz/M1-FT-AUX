@@ -24,6 +24,12 @@ function numeroEnComun(array1, array2) {
         }
     }
 
+    //cuando no haya numeros en comun
+    array1=Math.min(...array1)
+    array2=Math.min(...array2)
+    if(array1>=array2){return array2}
+    else{return array1}
+
 };
 
 
