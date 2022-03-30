@@ -6,11 +6,9 @@ function invertirOrden(array) {
     // DETALLE: En caso de que el elemento contenga mas de 1 digito, el mismo NO debera ser devuelto
     // No vale usar el metodo "reverse"
     let lista =[];
-    let i =array.length
+    let i =array.length;
     while(i>=0){
-        if(array[i]<10){
-            lista.push(array[i]);
-        }
+        if(array[i]<10){lista.push(array[i]);}
         i--
     };
     return lista
@@ -34,6 +32,12 @@ function sumaDeArrays(array) {
     // Tienen que devolver UN SOLO array que solo contenga elementos de tipo number
     // Sumando los elementos de cada array que contenga dos elementos, y devolviendo la suma del mismo
     // OJO: Si el elemento dentro del array que ingresa por prop, ya es de tipo number, deben devolverlo como tal dentro del array que retornan.
+   let suma =[];
+    for(let i=0;i<array.length;i++){
+       if(typeof array[i] == 'object'){suma.push(array[i][0]+array[i][1])}
+       else{suma.push(array[i])}
+    }
+    return suma
    
 };
 
