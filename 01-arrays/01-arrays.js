@@ -23,6 +23,7 @@ function numeroEnComun(array1, array2) {
             if(array1[i]==array2[j]){return array1[i]}
         }
     }
+
 };
 
 
@@ -38,7 +39,6 @@ function sumaDeArrays(array) {
        else{suma.push(array[i])}
     }
     return suma
-   
 };
 
 
@@ -46,7 +46,15 @@ function mismoValorMismosElementos(numero, divisor) {
     // Tiene que devolver un array con la misma cantidad de elementos que el valor del divisor
     // Todos los elementos deben tener el mismo valor
     // OJO: Si el resultado de la division no es un entero, deben devolver false
-
+    let resultado = [];
+    let division = numero/divisor;
+    if(Number.isInteger(division)){
+        for(let i=0;i<divisor;i++){
+            resultado.push(division)
+        };
+        return resultado  
+    }
+    return false
 };
 
 
@@ -69,6 +77,10 @@ function elementoMenorYMayor(array) {
     // arr.push(menor)
     // arr.push(mayor)
     // return arr
+
+    //ordenar el arreglo de menor a mayor
+    array.sort((a,b)=>a-b)
+    return [array[0],array[array.length-1]]
 };
 
 
