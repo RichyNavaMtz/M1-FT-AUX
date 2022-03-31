@@ -11,6 +11,9 @@ function timeConversion(time){
     //cuando no hay datos
     if(time.length <3){return false}
 
+    // pudimos utilizar slice para obtener una porcion del arreglo
+    // let sec= time.slice(8,10) = '00'
+    //pero antes no debimos hacer time.split()
     let hora = time.shift() //time =['42','00PM']
     let sec = time[1][0]+time[1][1] //sec = '0' + '0' = '00'
     let tiempo = time[1][2] // 'P' or 'A'
