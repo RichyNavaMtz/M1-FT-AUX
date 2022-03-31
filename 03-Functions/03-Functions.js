@@ -35,7 +35,6 @@ function timeConversion(time){
     return hora+':'+time[0]+':'+sec    
     }
 
-
     //cuando sea de mañana
     if(tiempo=='A'){
         if(hora == '12'){return '00'+':'+time[0]+':'+sec}
