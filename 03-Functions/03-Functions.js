@@ -20,10 +20,7 @@ function timeConversion(time){
 
     //cuando hora es mayor a 12
     //cuando min > 59
-    if(Number(hora)>12 || Number(time[0])>59){return false}
-    
-    //cuando sec >59
-    if(Number(sec)>59){return false}
+    if(hora>12 || time[0]>59 ||sec>59){return false}
     
     //cuando sea tarde
     if(tiempo=='P'){
