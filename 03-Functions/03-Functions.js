@@ -7,7 +7,7 @@ function timeConversion(time){
     
     time = time.split(':');
     // [ '03', '15', '00PM' ] 
-     
+    //let [hora,minutos,segundos]= time.split(':')
     //cuando no hay datos
     if(time.length <3){return false}
 
