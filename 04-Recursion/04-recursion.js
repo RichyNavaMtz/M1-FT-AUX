@@ -4,29 +4,30 @@
 
 const producto = function (array) {
   //escribe aqui tu codigo
+  
+  if(array.length==0){return 1}
+  
+  return array.shift()*producto(array)
 
 };
 
-// Dado un objeto con objetos anidados utilizar la recursión para crear una función
-// que devuelva true o false dependiendo si el objeto tiene o no el valor pasado por parametro
-// ejemplo:
-// let obj = {
-  //    prop2:{value:5}     
-  //     school: {
-    //         hogwarts: {
-      //             headmaster:{
-        //               name: {
-          //                 first: "Albus",
-          //                 last: "Dumbledore"
-          //               }
-          //             }
-          //         }
-          //     } 
+
 
 
 
 const isThere = function (obj, value){
-  //escribe aqui tu codigo 
+  let keys = Object.keys(obj)
 
+  for(let i=0;i<keys.length;i++){
+    if(obj[keys[i]]==value){return true}		
+  }
+
+  for(let i=0;i<keys.length;i++){
+    if(typeof obj[keys[i]]=='object'){return isThere(obj[keys[i]],value)} 
+  }
+
+  return false
 };
+
+
 module.exports = { producto, isThere };
