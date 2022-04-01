@@ -6,7 +6,7 @@ const producto = function (array) {
   //escribe aqui tu codigo
   
   if(array.length==0){return 1}
-  
+
   return array.shift()*producto(array)
 
 };
@@ -27,7 +27,20 @@ const isThere = function (obj, value){
   }
 
   return false
+
+
 };
+
+// for(const key in obj){
+//   if(obj[key]==value){return true}
+
+//   if(typeof obj[key]=='object'){
+//     let aux = isThere(obj[key],value)
+//     if(aux){return true}
+//   }
+// }
+
+
 
 
 module.exports = { producto, isThere };
