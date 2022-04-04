@@ -18,9 +18,24 @@ const { Queue } = require("../estructuras")
 // Importante!: Aquellas personas que no cumplan con los requisitos para ingresar deben ser removidos de la cola 
 
 var controlAcces = function(queue, event){
-    // Tu código aca:
-    
-  };
+  let Queue = queue.array;
+  let tamaño = Queue.length;
+  let acceso = [];
+  const numeroSet = new Set()
+
+  for(let i=0;i<tamaño;i++){
+    if((Queue[i].age>17) && (Queue[i].ticket.event == event) && (!numeroSet.has(Queue[i].ticket.number))){
+      acceso.push(Queue[i]);
+      numeroSet.add(Queue[i].ticket.number)
+    }
+  }
+  
+  let names = []
+  for(let i =0;i<acceso.length;i++){
+    names.push(acceso[i].fullname)
+  }
+  return names
+};
       
   
 
