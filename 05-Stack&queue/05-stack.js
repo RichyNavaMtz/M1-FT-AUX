@@ -17,7 +17,14 @@ const { Stack, Queue } = require("../estructuras")
 
 function efectoEspejo(str){  
 //tu codigo aqui
+let stack = new Stack()
+str = str.split(' ')
 
+for(let i=0;i<str.length;i++){
+  stack.push(str[i])
+}
+////todos las palabras estan en el stack
+  
 };
 
 
