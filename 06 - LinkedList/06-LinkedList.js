@@ -39,9 +39,28 @@ LinkedList.prototype.orderList = function () {
   
     
 LinkedList.prototype.insert = function(data,pos) {
-	
-
-
+   let current = this.head 
+  
+  if(pos==1){
+    let siguiente =this.head
+    this.head = new Node(data)
+    this.head.next=siguiente
+    this.len++
+    return this
+  }
+  
+  let i =2
+  while(i<pos){
+    current=current.next
+    i++
+  }
+ 	//posicion en la que agregamos un nuevo nodo con el valor que antes ya ha sido mencionado
+  // pos = current.next
+  let posterior = current.next
+  current.next = new Node(data)
+  this.len++
+  current.next.next=posterior
+  return this
 }
   
 
