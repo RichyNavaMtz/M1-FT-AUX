@@ -7,8 +7,26 @@ const { BinarySearchTree } = require("../estructuras")
 //          (7)     (12)       
 //         /  \      /  \
 //      (2)  (9)  (11)  (15)   
-BinarySearchTree.prototype.search= function(value){
-   
+BinarySearchTree.prototype.search= function(valor){
+    if(this.value == valor){return this.value}
+
+	if(valor > this.value){
+        if(!this.right){
+            return 'no se encontró el valor'
+        }else{
+            return this.right.search(valor)
+        }
+    }
+  
+	if(valor < this.value){
+        if(!this.left){
+            return 'no se encontró el valor'
+        }else{
+            return this.left.search(valor)
+        }
+    } 
+    
+    return 'no se encontró el valor'
 }
 
 
@@ -21,7 +39,27 @@ BinarySearchTree.prototype.search= function(value){
 
 
 BinarySearchTree.prototype.height= function(){
- 
+let der = this.right
+let izq = this.left
+let countDer=0
+let countIzq=0
+
+while(der){
+    der = der.right
+    countDer+=1
+}
+
+while(izq){
+    izq = izq.left
+    countIzq +=1
+}
+
+if(countIzq >= countDer){
+    return countIzq
+}else{
+    return countDer
+}
+
 }
 
 module.exports={
